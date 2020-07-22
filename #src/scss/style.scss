@@ -1,0 +1,334 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+	@font-face {
+	font-family: $font_name;
+	font-display: swap;
+	src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+	font-weight: #{$weight};
+	font-style: #{$style};
+	}
+}
+// Подключение шрифтов
+@import "fonts";
+
+
+//===============================================================================================================================================================================================
+// Обнуление
+*{padding: 0;margin: 0;border: 0;}
+*,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a,a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
+//===============================================================================================================================================================================================
+
+// Media 
+$md1 : 991px;
+$md2 : 767px;
+$md3 : 480px;
+$md4 : 320px;
+
+$main-color: #4fbfa8;
+$darker-color :#348e7b;
+$RobotoSlab :"Roboto Slab", serif;
+$Roboto : "Roboto", sans-serif; 
+
+@import "ui";
+
+
+html {
+	font-size: 16px;
+}
+
+body {
+	font-family: "Roboto",sans-serif;
+	font-size: 1rem;
+
+	@media (max-width: $md2) {
+		&.lock {
+			overflow: hidden;
+		}
+	}
+}
+
+// Container
+.container {
+	max-width: 1140px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+// Header 
+.header {
+	position: relative;
+	z-index: 1;
+	background-color: #fff;
+	// header__box
+	&__box {
+		height: 80px;
+		display: flex;
+		justify-content: space-between;
+		text-transform: uppercase;
+		align-items: center;
+
+		@media (max-width: $md2) {
+			height: 60px;
+		}
+	}
+	// header__logo
+	&__logo {
+		font-family: $RobotoSlab;
+		font-size: (20/16) + rem;
+		font-weight: 700;
+		color: $main-color;
+		transition: color .2s linear;
+		border-top: 3px solid #fff;
+		letter-spacing: 0.1em;
+		z-index: 2;
+
+		&:hover {
+			color:$darker-color;
+		}
+
+		@media (max-width: $md2) {
+			border-top: 0;
+		}
+	}
+}
+
+// Burger
+// .burger {
+// 	display: none;
+// 	width: 30px;
+// 	height: 20px;
+// 	position: relative;
+// 	cursor: pointer;
+// 	z-index: 1;
+
+// 	&:before, &:after,& span{
+// 		content:'';
+// 		background-color: #000;
+// 		position: absolute;
+// 		width: 100%;
+// 		height: 2px;
+// 		left: 0;
+// 		transition: all .3s ease;
+// 	}
+// 	// burger span
+// 	& span {
+// 			top: 9px;
+// 		}
+// 	&:before {
+// 			top: 0;
+// 		}
+// 	&:after {
+// 		bottom: 0;
+// 	}
+
+// 	@media (max-width: $md2) {
+// 		display: block;
+// 	}
+// 	// burger.active
+// 	&.active {
+// 		&:before {
+// 			transform: rotate(45deg);
+// 			top: 9px;
+// 		}
+// 		&:after {
+// 			transform: rotate(-45deg);
+// 			bottom: 9px;
+// 		}
+// 		& span {
+// 			transform: scale(0);
+// 		}
+// 	}
+// }
+
+// Menu
+.menu {
+	
+	@media (max-width: $md2) {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: #fff;
+		transition: all .7s ease;
+		transform: translateY(-100%);
+		overflow: auto;
+		
+		&.active {
+			transform: translateY(0);
+		}
+	}
+	// menu__list
+	&__list {
+		display: flex;
+		justify-content: space-between;
+		text-align: center;
+
+		@media (max-width: $md2) {
+			flex-direction: column;
+			margin-top: 60px;
+		}
+	}
+	// menu__item
+	&__item {
+		padding: 32px 10px;
+		border-top: 3px solid #fff;
+		margin-right: 10px;
+		transition: border .2s linear;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		&:hover, &.active {
+			.menu__link {
+				color: #333;
+			}
+
+			border-top: 3px solid $main-color;
+
+			@media (max-width: $md2) {
+				border-top: 0;
+
+				.menu__link {
+				color: $main-color;
+				}	
+			}
+		}
+
+		@media (max-width: $md2) {
+			margin-right: 0;
+			border-top: 0;
+		}
+	}
+	// menu__link
+	&__link {
+		color: #777;
+		transition: color .2s linear;
+		font-size: (14/16)+rem;
+		letter-spacing: 0.1em;
+	}
+}
+
+// Intro
+
+.intro {
+	text-align: center;
+	font-family: $RobotoSlab;
+	color: #fff;
+	background: url('../img/intro/home.jpg') 50% no-repeat;
+	background-size: cover;
+	height: 100vh;
+	min-height: 720px;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+	@media (max-width: $md3) {
+		text-shadow: 0 1px 4px rgba(0,0,0,1);
+	}
+
+	// .intro__content
+	&__container {
+		position: absolute;
+		top: 50%;
+		left: 50%;	
+		transform: translate3d(-50%, -50%, 0);
+		width: 100%;
+		height: 100%;
+	}
+
+	// .intro__logo
+	&__logo {
+		width: 130px;
+		height: 130px;
+  		filter: drop-shadow(3px 2px 1px rgba(0, 0, 0, 0.4));
+  		position: absolute;
+  		top: 25%;
+  		left: 50%;
+  		animation: logo-appearance 2s ease forwards;
+
+  		@media (max-width: $md3) {
+  			top: 20%;
+  		}
+
+  		@keyframes logo-appearance {
+  			0% {
+  				transform: translate3d(-50%,-100px,0);
+  				opacity: 0;
+
+  			}
+
+  			100% {
+				transform: translate3d(-50%,0,0);
+				opacity: 1;
+  			}
+  		}
+
+	}
+
+	// .intro__content
+	&__content {
+		position: absolute;
+		top: 55%;
+		padding: 0 15px;
+		margin: 0 -15px;
+		width: 100%;
+		@media (max-width: $md3) {
+			top: 45%
+		}
+	}
+
+
+	// .intro__title
+	&__title {
+		font-size: (57.6/16)+rem;
+		font-weight: 700;
+		margin: 0 0 48px;
+		opacity: 0;
+		animation: title-appearance 2s ease forwards .200s;
+
+		@keyframes title-appearance {
+  			0% {
+  				transform: translateY(100px);
+  			}
+
+  			100% {
+				transform: translateY(0);
+				opacity: 1;
+  			}
+  		}
+
+	}
+	// .intro__subtitle
+	&__subtitle {
+		font-size: (28/16)+rem;
+		line-height: 1.2;
+		opacity: 0;
+		animation: subtitle-appearance 2s ease .500s forwards;
+
+		@keyframes subtitle-appearance {
+  			0% {
+  				transform: translateY(100px);
+  			}
+
+  			100% {
+				transform: translateY(0);
+				opacity: 1;
+  			}
+  		}
+	}
+}
