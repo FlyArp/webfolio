@@ -1,3 +1,25 @@
+@keyframes appearance-top {
+  	0% {
+  		transform: translateY(-100px);
+  	}
+
+  	100% {
+		transform: translateY(0);
+		opacity: 1;
+  	}
+}
+
+@keyframes appearance-bottom {
+  	0% {
+  		transform: translateY(100px);
+  	}
+
+  	100% {
+		transform: translateY(0);
+		opacity: 1;
+  	}
+}
+
 // ===========================================================================================================
 // Burger menu
 
@@ -47,3 +69,16 @@
 	}
 }
 // ===========================================================================================================
+
+// Appearance animation
+.appearance-anim-top {
+	// opacity: 0;
+	animation: appearance-top 2s ease forwards .200s;
+
+}
+
+.appearance-anim-bottom {
+	// opacity: 0;
+	animation: appearance-bottom 2s ease forwards .200s;
+
+}

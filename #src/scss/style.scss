@@ -38,8 +38,9 @@ $md4 : 320px;
 
 $main-color: #4fbfa8;
 $darker-color :#348e7b;
-$RobotoSlab :"Roboto Slab", serif;
-$Roboto : "Roboto", sans-serif; 
+$main-font : "Roboto", sans-serif; 
+$sec-font :"Roboto Slab", serif;
+
 
 @import "ui";
 
@@ -49,7 +50,7 @@ html {
 }
 
 body {
-	font-family: "Roboto",sans-serif;
+	font-family: $main-font;
 	font-size: 1rem;
 
 	@media (max-width: $md2) {
@@ -68,7 +69,8 @@ body {
 
 // Header 
 .header {
-	position: relative;
+	position: fixed;
+	width: 100%;
 	z-index: 1;
 	background-color: #fff;
 	// header__box
@@ -85,7 +87,7 @@ body {
 	}
 	// header__logo
 	&__logo {
-		font-family: $RobotoSlab;
+		font-family: $sec-font;
 		font-size: (20/16) + rem;
 		font-weight: 700;
 		color: $main-color;
@@ -103,54 +105,6 @@ body {
 		}
 	}
 }
-
-// Burger
-// .burger {
-// 	display: none;
-// 	width: 30px;
-// 	height: 20px;
-// 	position: relative;
-// 	cursor: pointer;
-// 	z-index: 1;
-
-// 	&:before, &:after,& span{
-// 		content:'';
-// 		background-color: #000;
-// 		position: absolute;
-// 		width: 100%;
-// 		height: 2px;
-// 		left: 0;
-// 		transition: all .3s ease;
-// 	}
-// 	// burger span
-// 	& span {
-// 			top: 9px;
-// 		}
-// 	&:before {
-// 			top: 0;
-// 		}
-// 	&:after {
-// 		bottom: 0;
-// 	}
-
-// 	@media (max-width: $md2) {
-// 		display: block;
-// 	}
-// 	// burger.active
-// 	&.active {
-// 		&:before {
-// 			transform: rotate(45deg);
-// 			top: 9px;
-// 		}
-// 		&:after {
-// 			transform: rotate(-45deg);
-// 			bottom: 9px;
-// 		}
-// 		& span {
-// 			transform: scale(0);
-// 		}
-// 	}
-// }
 
 // Menu
 .menu {
@@ -226,19 +180,21 @@ body {
 
 .intro {
 	text-align: center;
-	font-family: $RobotoSlab;
+	font-family: $sec-font;
 	color: #fff;
 	background: url('../img/intro/home.jpg') 50% no-repeat;
 	background-size: cover;
 	height: 100vh;
 	min-height: 720px;
 	width: 100%;
-	position: absolute;
+	position: relative;
 	top: 0;
 	left: 0;
 	text-shadow: 0 1px 2px rgba(0,0,0,0.6);
 	@media (max-width: $md3) {
 		text-shadow: 0 1px 4px rgba(0,0,0,1);
+
+
 	}
 
 	// .intro__content
@@ -251,33 +207,23 @@ body {
 		height: 100%;
 	}
 
+	&__logo-container {
+		position: absolute;
+		top: 25%;
+		left: 50%;
+		transform: translateX(-50%);
+		
+		@media (max-width: $md3) {
+  			top: 20%;
+  		}
+	}
+
 	// .intro__logo
 	&__logo {
 		width: 130px;
 		height: 130px;
   		filter: drop-shadow(3px 2px 1px rgba(0, 0, 0, 0.4));
-  		position: absolute;
-  		top: 25%;
-  		left: 50%;
-  		animation: logo-appearance 2s ease forwards;
-
-  		@media (max-width: $md3) {
-  			top: 20%;
-  		}
-
-  		@keyframes logo-appearance {
-  			0% {
-  				transform: translate3d(-50%,-100px,0);
-  				opacity: 0;
-
-  			}
-
-  			100% {
-				transform: translate3d(-50%,0,0);
-				opacity: 1;
-  			}
-  		}
-
+  		opacity: 0;
 	}
 
 	// .intro__content
@@ -298,37 +244,103 @@ body {
 		font-size: (57.6/16)+rem;
 		font-weight: 700;
 		margin: 0 0 48px;
+		animation-delay: .5s;
 		opacity: 0;
-		animation: title-appearance 2s ease forwards .200s;
-
-		@keyframes title-appearance {
-  			0% {
-  				transform: translateY(100px);
-  			}
-
-  			100% {
-				transform: translateY(0);
-				opacity: 1;
-  			}
-  		}
-
 	}
 	// .intro__subtitle
 	&__subtitle {
 		font-size: (28/16)+rem;
 		line-height: 1.2;
+		animation-delay: 1s;
 		opacity: 0;
-		animation: subtitle-appearance 2s ease .500s forwards;
-
-		@keyframes subtitle-appearance {
-  			0% {
-  				transform: translateY(100px);
-  			}
-
-  			100% {
-				transform: translateY(0);
-				opacity: 1;
-  			}
-  		}
 	}
+}
+
+// Section
+.section {
+	padding: 60px 0;
+	color: #555;
+	text-align: center;
+	// .section__title
+	&__title {
+		font-family: $sec-font;
+		font-size: 2.9rem;
+		font-weight: 400;
+		border-top: 1px solid #ccc;
+		border-bottom: 1px solid #ccc;
+		padding: 10px 0;
+		margin-bottom: 40px;
+		display: inline-block;
+		text-transform: uppercase;
+		opacity: 0;
+	}
+	// .section__content
+	&__content {
+		display: flex;
+		justify-content: space-between;
+	}
+	// .section__text
+	&__text {
+		// flex: 1 1 40%;
+		width: 48%;
+		text-align: left;
+		font-size: 1rem;
+		line-height: 1.5;
+		opacity: 0;
+		animation-delay: .25s;
+		& p {
+			margin-bottom: 16px;
+		}
+	}
+	// .section__skills
+	&__skills {
+		// flex: 1 1 40%;
+		width: 48%;
+		opacity: 0;
+		animation-delay: .500s;
+	}
+}
+
+// Skills
+.skills {
+	// .skills__item
+	&__item {
+		margin-bottom: 20px;
+	}
+	// .skills__title
+	&__title {
+		text-transform: uppercase;
+		font-weight: 300;
+		text-align: left;
+		line-height: 1.5;
+	}
+	// .skills__bar
+	&__bar {
+		background-color: #e9ecef;
+	}
+
+	&__html,&__css,&__javascript,&__jquery {
+		background-color: $main-color;
+		height: 30px;
+	}
+	// .skills__html
+	&__html {
+		width: 75%;
+	}
+	// .skills__css
+	&__css {
+		width: 65%;
+		opacity: 0.8;
+	}
+	// .skills__javascript
+	&__javascript {
+		width: 30%;
+		opacity: 0.7;
+	}
+	// .skills__jquery
+	&__jquery {
+		width: 35%;
+		opacity: 0.6;
+	}
+
 }
