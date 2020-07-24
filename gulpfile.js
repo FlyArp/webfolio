@@ -19,6 +19,7 @@ let path={
 		js: source_folder + "/js/script.js",
 		img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
 		fonts: source_folder + "/fonts/*.ttf",
+		fontsIcon: source_folder + "/fonts/icon/*",
 	},
 	watch:{
 		html: source_folder + "/**/*.html",
@@ -128,8 +129,10 @@ function fonts(params) {
 	src(path.src.fonts)
 		.pipe(ttf2woff())
 		.pipe(dest(path.build.fonts));
-	return src(path.src.fonts)
+	src(path.src.fonts)
 		.pipe(ttf2woff2())
+		.pipe(dest(path.build.fonts));
+	return src(path.src.fontsIcon)
 		.pipe(dest(path.build.fonts));
 }
 
