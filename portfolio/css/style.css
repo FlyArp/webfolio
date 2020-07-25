@@ -205,7 +205,7 @@ h6 {
             transform: scale3d(0.97, 0.97, 0.97);
   }
 
-  to {
+  100% {
     opacity: 1;
     -webkit-transform: scale3d(1, 1, 1);
             transform: scale3d(1, 1, 1);
@@ -240,7 +240,7 @@ h6 {
             transform: scale3d(0.97, 0.97, 0.97);
   }
 
-  to {
+  100% {
     opacity: 1;
     -webkit-transform: scale3d(1, 1, 1);
             transform: scale3d(1, 1, 1);
@@ -302,19 +302,19 @@ h6 {
           transform: scale(0);
 }
 
-.appearance-anim-top {
-  -webkit-animation: appearance-top 2s ease forwards .200s;
-          animation: appearance-top 2s ease forwards .200s;
+.fade-top {
+  -webkit-animation: appearance-top 2s ease forwards;
+          animation: appearance-top 2s ease forwards;
 }
 
-.appearance-anim-bottom {
-  -webkit-animation: appearance-bottom 2s ease forwards .200s;
-          animation: appearance-bottom 2s ease forwards .200s;
+.fade-bottom {
+  -webkit-animation: appearance-bottom 2s ease forwards;
+          animation: appearance-bottom 2s ease forwards;
 }
 
-.appearance-anim-bounce {
-  -webkit-animation: appearance-bounce 1.5s forwards .200s;
-          animation: appearance-bounce 1.5s forwards .200s;
+.bounce {
+  -webkit-animation: appearance-bounce 1.5s forwards;
+          animation: appearance-bounce 1.5s forwards;
 }
 
 html {
@@ -403,6 +403,14 @@ body {
   color: #333;
 }
 
+.menu__item.touch:hover {
+  border-color: #fff;
+}
+
+.menu__item.touch.active {
+  border-color: #4fbfa8;
+}
+
 .menu__link {
   color: #777;
   -webkit-transition: color .2s linear;
@@ -419,6 +427,7 @@ body {
   background: url("../img/intro/home.jpg") 50% no-repeat;
   background-size: cover;
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   min-height: 720px;
   width: 100%;
   position: relative;
@@ -645,8 +654,6 @@ body {
 
 .section-footer {
   opacity: 0;
-  -webkit-animation-delay: .3s;
-          animation-delay: .3s;
 }
 
 .section-footer__title {
@@ -1017,6 +1024,14 @@ body {
 
   .intro__content {
     top: 45%;
+  }
+
+  .section {
+    padding: 40px 0;
+  }
+
+  .section__title {
+    font-size: 2.5rem;
   }
 
   .section__line {

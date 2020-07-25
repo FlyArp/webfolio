@@ -10,7 +10,6 @@
 // Подключение шрифтов
 @import "fonts";
 
-
 //===============================================================================================================================================================================================
 // Обнуление
 *{padding: 0;margin: 0;border: 0;}
@@ -166,6 +165,15 @@ body {
 			margin-right: 0;
 			border-top: 0;
 		}
+
+		&.touch {
+			&:hover {
+				border-color: #fff;
+			}
+			&.active {
+				border-color: $main-color;
+			}
+		}
 	}
 	// menu__link
 	&__link {
@@ -185,6 +193,7 @@ body {
 	background: url('../img/intro/home.jpg') 50% no-repeat;
 	background-size: cover;
 	height: 100vh;
+	height: calc(var(--vh, 1vh) * 100);
 	min-height: 720px;
 	width: 100%;
 	position: relative;
@@ -193,8 +202,6 @@ body {
 	text-shadow: 0 1px 2px rgba(0,0,0,0.6);
 	@media (max-width: $md3) {
 		text-shadow: 0 1px 4px rgba(0,0,0,1);
-
-
 	}
 
 	// .intro__content
@@ -259,6 +266,10 @@ body {
 	color: #555;
 	text-align: center;
 	overflow: hidden;
+
+	@media (max-width: $md3) {
+		padding: 40px 0;
+	}
 	// .section_green
 	&_green {
 		background: linear-gradient(to bottom, #4fbfa8, #74cdba);
@@ -276,6 +287,9 @@ body {
 		display: inline-block;
 		text-transform: uppercase;
 		opacity: 0;
+		@media (max-width: $md3) {
+			font-size: 2.5rem;
+		}
 		&_visible {
 			opacity: 1;
 		}
@@ -452,7 +466,6 @@ body {
 // Section-footer
 .section-footer {
 	opacity: 0;
-	animation-delay: .3s;
 	// .section-footer__title
 	&__title {
 		font-size: 1.4375rem;
@@ -676,7 +689,6 @@ body {
 		}
 		&:focus {
 			box-shadow: 0 0 0 0.2rem rgba(79,191,168,0.5);
-			// border-color: #ade1d6;
 		}
 	}
 }
