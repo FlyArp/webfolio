@@ -2,7 +2,7 @@ $(function() {
 
 // Глобальные Переменные===================================================================================================================================================================================================
 	var scrollOffset = $(window).scrollTop() + $(window).height(),
-	animateBlocks = [$('#about'),$('#services')],
+	animateBlocks = [$('#about'),$('#services'),$('#work'),$('#contact')],
 	numAnimblocks = 0;
 
 // Функции================================================================================================================================================================
@@ -11,16 +11,18 @@ $(function() {
 		if (blockId.attr('data-anim-ready') === 'true') {
 			return;
 		}
+		console.log(blockId);
 		let animElem = $('[data-animation]'),
 		count = 0,
 		length = blockId.find(animElem).length;
 
 		$.each(blockId.find(animElem), function(index, value) {
-
+			// console.log(value.className);
 			let h1 = $(value).offset().top;
 			if (scrollOffset - h1 >= 50) {
 				$(value).addClass('appearance-anim-' + $(value).attr('data-animation'))
 				count = count + 1;
+				// console.log(value.className + "Анимировано");
 			}
 		});
 		if (length === count) {
@@ -37,6 +39,8 @@ $(function() {
 	// Animation
 	animation($('#about'));
 	animation($('#services'));
+	animation($('#work'));
+	animation($('#contact'));
 	// Пройтись по каждому блоку
 
 	$(window).on('scroll', function(event) {
