@@ -107,8 +107,8 @@ body {
 }
 
 // Menu
-.menu {
-	
+.menu {		
+	font-size: (14/16)+rem;
 	@media (max-width: $md2) {
 		position: fixed;
 		top: 0;
@@ -124,12 +124,19 @@ body {
 			transform: translateY(0);
 		}
 	}
+	// menu__wrapper
+	&__wrapper {
+		display: flex;
+		@media (max-width: $md2) {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
 	// menu__list
 	&__list {
 		display: flex;
 		justify-content: space-between;
 		text-align: center;
-
 		@media (max-width: $md2) {
 			flex-direction: column;
 			margin-top: 60px;
@@ -137,7 +144,7 @@ body {
 	}
 	// menu__item
 	&__item {
-		padding: 27px 10px;
+		padding: 28px 10px;
 		border-top: 3px solid #fff;
 		margin-right: 10px;
 		transition: border .2s linear;
@@ -180,8 +187,68 @@ body {
 	&__link {
 		color: #777;
 		transition: color .2s linear;
-		font-size: (14/16)+rem;
+		// font-size: (14/16)+rem;
 		letter-spacing: 0.1em;
+	}
+}
+
+// Lang Switch
+.lang-switch{
+	color: #777;
+	letter-spacing: 0.1em;
+	position: relative;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	transition: all .3s ease;
+
+	&__current {
+		border-top: 3px solid #fff;
+		color: $main-color;
+		cursor: pointer;
+		position: relative;
+		z-index: 10;
+		padding: 28px 10px;
+		background-color: #fff;
+		transition: all .3s ease;
+		&:hover {
+			background-color: $main-color;
+			border-color: $main-color;	
+			color: #fff;
+			// .lang-switch {
+			// 	background-color: $main-color;
+			// 	border-color: $main-color;
+			// 	// color: #fff;
+			// }
+		}
+	}
+	&__choice {
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+		opacity: 0;
+		visibility: hidden;
+		transition: all .3s ease;
+
+		&.active {
+			transform: translateY(40px);
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+	&__item {
+		padding: 15px 6px 10px;
+		background-color: #fff;
+		text-align: left;
+		display: block;
+		cursor: pointer;
+		transition: color .2s ease;
+		&:hover {
+			color:$darker-color;
+		}
 	}
 }
 
@@ -704,3 +771,4 @@ body {
 	font-size: 0.9rem;
 	text-align: center;
 }
+
