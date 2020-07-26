@@ -51,6 +51,7 @@ html {
 body {
 	font-family: $main-font;
 	font-size: 1rem;
+	line-height: 1.5;
 
 	@media (max-width: $md2) {
 		&.lock {
@@ -136,7 +137,7 @@ body {
 	}
 	// menu__item
 	&__item {
-		padding: 32px 10px;
+		padding: 27px 10px;
 		border-top: 3px solid #fff;
 		margin-right: 10px;
 		transition: border .2s linear;
@@ -216,7 +217,7 @@ body {
 
 	&__logo-container {
 		position: absolute;
-		top: 25%;
+		top: 28%;
 		left: 50%;
 		transform: translateX(-50%);
 		
@@ -247,6 +248,7 @@ body {
 	&__title {
 		font-size: (57.6/16)+rem;
 		font-weight: 700;
+		line-height: 1.2;
 		margin: 0 0 48px;
 		animation-delay: .5s;
 		opacity: 0;
@@ -278,6 +280,7 @@ body {
 	// .section__title
 	&__title {
 		font-family: $sec-font;
+		line-height: 1.2;
 		font-size: 2.9rem;
 		font-weight: 400;
 		border-top: 1px solid #ccc;
@@ -331,8 +334,6 @@ body {
 	&__text {
 		width: 48%;
 		text-align: left;
-		font-size: 1rem;
-		line-height: 1.5;
 		opacity: 0;
 		animation-delay: .25s;
 		& p {
@@ -375,7 +376,6 @@ body {
 		text-transform: uppercase;
 		font-weight: 300;
 		text-align: left;
-		line-height: 1.5;
 	}
 	// .skills__bar
 	&__bar {
@@ -446,6 +446,7 @@ body {
 	// .services__icon
 	&__icon {
 		font-size: (56/16) + rem;
+		line-height: 1;
 		margin-bottom: 10px;
 		text-shadow: 5px 5px 0 #3aa18c;
 	}
@@ -460,7 +461,6 @@ body {
 	&__text {
 		font-size: 0.9rem;
 		text-align: left;
-		line-height: 1.5;
 	}
 }
 // Section-footer
@@ -475,6 +475,7 @@ body {
 	// .section-footer__btn
 	&__btn {
 		transition: box-shadow .2s ease, color .2s ease;
+		line-height: 1.5;
 		&:focus {
 			text-decoration: underline;
 			box-shadow: 0 0 0 0.2rem rgba(248,249,250,0.5);
@@ -498,7 +499,6 @@ body {
 	padding: .45rem .75rem;
 	border: 1px solid #fff;
 	display: inline-block;
-	line-height: 1.5;
 	transition: all .3s ease;
 	letter-spacing: 0.1em;
 	
@@ -593,6 +593,7 @@ body {
 	&__title {
 		font-family: $sec-font;
 		font-size: 1.5rem;
+		line-height: 1.2;
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		font-weight: 300;
@@ -600,7 +601,6 @@ body {
 	}
 	// .work__subtitle
 	&__subtitle {
-		line-height: 1.5;
 	}
 }
 // Contact
@@ -642,10 +642,10 @@ body {
 	&__input {
 		padding: .45rem .75rem;
 		border: 1px solid #ced4da;
+		line-height: 1.5;
 		transition: box-shadow .2s ease, border .2s ease;
 		font-size: 1rem;
 		color:#495057;
-		line-height: 1.5;
 		&:focus {
 			box-shadow: 0 0 0 0.2rem rgba(79,191,168,0.25);
 			border-color: #ade1d6;

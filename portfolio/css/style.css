@@ -324,6 +324,7 @@ html {
 body {
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
+  line-height: 1.5;
 }
 
 .container {
@@ -381,7 +382,7 @@ body {
 }
 
 .menu__item {
-  padding: 32px 10px;
+  padding: 27px 10px;
   border-top: 3px solid #fff;
   margin-right: 10px;
   -webkit-transition: border .2s linear;
@@ -448,7 +449,7 @@ body {
 
 .intro__logo-container {
   position: absolute;
-  top: 25%;
+  top: 28%;
   left: 50%;
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
@@ -474,6 +475,7 @@ body {
 .intro__title {
   font-size: 3.6rem;
   font-weight: 700;
+  line-height: 1.2;
   margin: 0 0 48px;
   -webkit-animation-delay: .5s;
           animation-delay: .5s;
@@ -504,6 +506,7 @@ body {
 
 .section__title {
   font-family: "Roboto Slab", serif;
+  line-height: 1.2;
   font-size: 2.9rem;
   font-weight: 400;
   border-top: 1px solid #ccc;
@@ -544,8 +547,6 @@ body {
 .about__text {
   width: 48%;
   text-align: left;
-  font-size: 1rem;
-  line-height: 1.5;
   opacity: 0;
   -webkit-animation-delay: .25s;
           animation-delay: .25s;
@@ -570,7 +571,6 @@ body {
   text-transform: uppercase;
   font-weight: 300;
   text-align: left;
-  line-height: 1.5;
 }
 
 .skills__bar {
@@ -635,6 +635,7 @@ body {
 
 .services__icon {
   font-size: 3.5rem;
+  line-height: 1;
   margin-bottom: 10px;
   text-shadow: 5px 5px 0 #3aa18c;
 }
@@ -649,7 +650,6 @@ body {
 .services__text {
   font-size: 0.9rem;
   text-align: left;
-  line-height: 1.5;
 }
 
 .section-footer {
@@ -668,6 +668,7 @@ body {
   -o-transition: box-shadow .2s ease, color .2s ease;
   transition: box-shadow .2s ease, color .2s ease;
   transition: box-shadow .2s ease, color .2s ease, -webkit-box-shadow .2s ease;
+  line-height: 1.5;
 }
 
 .section-footer__btn:focus {
@@ -683,7 +684,6 @@ body {
   padding: .45rem .75rem;
   border: 1px solid #fff;
   display: inline-block;
-  line-height: 1.5;
   -webkit-transition: all .3s ease;
   -o-transition: all .3s ease;
   transition: all .3s ease;
@@ -778,14 +778,11 @@ body {
 .work__title {
   font-family: "Roboto Slab", serif;
   font-size: 1.5rem;
+  line-height: 1.2;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   font-weight: 300;
   margin-bottom: .5rem;
-}
-
-.work__subtitle {
-  line-height: 1.5;
 }
 
 .contact {
@@ -813,6 +810,7 @@ body {
 .form__input {
   padding: .45rem .75rem;
   border: 1px solid #ced4da;
+  line-height: 1.5;
   -webkit-transition: border .2s ease, -webkit-box-shadow .2s ease;
   transition: border .2s ease, -webkit-box-shadow .2s ease;
   -o-transition: box-shadow .2s ease, border .2s ease;
@@ -820,7 +818,6 @@ body {
   transition: box-shadow .2s ease, border .2s ease, -webkit-box-shadow .2s ease;
   font-size: 1rem;
   color: #495057;
-  line-height: 1.5;
 }
 
 .form__input:focus {

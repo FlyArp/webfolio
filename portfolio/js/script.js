@@ -5,14 +5,13 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
 $(function() {
 
 // Глобальные Переменные==================================================================================================================================================================================================
-var headerHeight = $('.header').height(),
-wt = $(window).height();
+var headerHeight = $('.header').height();
 
-var scrollOffset = $(window).scrollTop() + headerHeight + (wt/2),
-aboutOffset = $('#about').offset().top,
-servOffset = $('#services').offset().top,
-workOffset = $('#work').offset().top,
-contactOffset = $('#contact').offset().top;
+var scrollOffset = $(window).scrollTop(),
+introActiveLevel = $('#intro').offset().top + $('#intro').outerHeight() * 0.5 - headerHeight,
+aboutActiveLevel = $('#about').offset().top + $('#about').outerHeight() * 0.5 - headerHeight,
+servActiveLevel = $('#services').offset().top + $('#services').outerHeight() * 0.5 - headerHeight,
+workActiveLevel = $('#work').offset().top + $('#work').outerHeight() * 0.5 - headerHeight;
 
 var contactLink = $('[data-scroll="#contact"]').parent('li'),
 workLink = $('[data-scroll="#work"]').parent(),
@@ -21,11 +20,18 @@ aboutLink = $('[data-scroll="#about"]').parent(),
 introLink = $('[data-scroll="#intro"]').parent(),
 allLink = $('.menu__item');
 // Функции================================================================================================================================================================
-	function checkSection() {
-		if (scrollOffset >= aboutOffset) {
-			if (scrollOffset >= servOffset) {
-				if (scrollOffset >= workOffset) {
-					if (scrollOffset >= contactOffset) {
+	/*
+		Function Scroll Spy
+	
+		Description:
+		introActiveLevel - насколько нужно прокрутить блок, чтобы активным стал следующий.
+		0,5 - половина блока; "- headerHeight" - если хедер fixed
+	*/
+	function scrollSpy () {
+		if (scrollOffset >= introActiveLevel) {
+			if (scrollOffset >= aboutActiveLevel) {
+				if (scrollOffset >= servActiveLevel) {
+					if ($(window).scrollTop() == $(document).height() - $(window).height()) {
 						if (contactLink.hasClass('active')) {
 							return;
 						} else {
@@ -33,11 +39,20 @@ allLink = $('.menu__item');
 							contactLink.addClass('active');
 						}
 					} else {
-						if (workLink.hasClass('active')) {
-							return;
+						if (scrollOffset >= workActiveLevel) {
+							if (contactLink.hasClass('active')) {
+								return;
+							} else {
+								allLink.removeClass('active');
+								contactLink.addClass('active');
+							}
 						} else {
-							allLink.removeClass('active');
-							workLink.addClass('active');
+							if (workLink.hasClass('active')) {
+								return;
+							} else {
+								allLink.removeClass('active');
+								workLink.addClass('active');
+							}
 						}
 					}
 				} else {
@@ -99,13 +114,12 @@ allLink = $('.menu__item');
 			scrollTop: blockOffset},
 			700, "swing");
 	});
+
 	// Check active section
-	checkSection();
+	scrollSpy();
 	$(window).on('scroll', function(event) {
-		scrollOffset = $(window).scrollTop() + headerHeight + (wt/2);
-		checkSection();
-		console.log(scrollOffset);
-		// console.log(contactOffset);
+		scrollOffset = $(window).scrollTop();
+		scrollSpy();
 	});
 
 	// Resize browser || rotate device
@@ -114,16 +128,14 @@ allLink = $('.menu__item');
   		let vh = window.innerHeight * 0.01;
  		document.documentElement.style.setProperty('--vh', `${vh}px`);
  		headerHeight = $('.header').height();
- 		wt = $(window).height();
- 		aboutOffset = $('#about').offset().top;
-		servOffset = $('#services').offset().top;
-		workOffset = $('#work').offset().top;
-		contactOffset = $('#contact').offset().top;
+ 		introActiveLevel = $('#intro').offset().top + $('#intro').outerHeight() * 0.5 - $('header').height();
+		aboutActiveLevel = $('#about').offset().top + $('#about').outerHeight() * 0.5 - $('header').height();
+		servActiveLevel = $('#services').offset().top + $('#services').outerHeight() * 0.5 - $('header').height();
+		workActiveLevel = $('#work').offset().top + $('#work').outerHeight() * 0.5 - $('header').height();
 	});
 
 	// Disable hover on touch devices
 	if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
- 		console.log('this is a touch device');
  		$('.menu__item').addClass('touch');
 	}
 
