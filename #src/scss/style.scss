@@ -215,11 +215,6 @@ body {
 			background-color: $main-color;
 			border-color: $main-color;	
 			color: #fff;
-			// .lang-switch {
-			// 	background-color: $main-color;
-			// 	border-color: $main-color;
-			// 	// color: #fff;
-			// }
 		}
 	}
 	&__choice {
@@ -582,24 +577,15 @@ body {
 	&__row {
 		display: flex;
 		justify-content: space-between;
-
-		& + & {
-			margin-top: 2%;
-		}
+		flex-wrap: wrap;
 
 		@media (max-width: $md1) {
-			flex-wrap: wrap;
 			justify-content: space-evenly;
-		}
-		@media (max-width: $md3) {
-			& + & {
-			margin-top: 3%;
-			}
 		}
 	}
 	// .work__item
 	&__item {
-		width: 23%;
+		width: 32%;
 		&:hover {
 			.work__text {
 				opacity: 1;
@@ -611,18 +597,22 @@ body {
 			}
 		}
 
+		&:nth-last-child(-n+3) {
+			margin-top: 1%;
+		}
+
 		@media (max-width: $md1) {
 			width: 45%;
 
-			&:nth-last-child(-n+2) {
-				margin-top: 2%;
+			&:nth-last-child(-n+4) {
+			margin-top: 2%;
 			}
 		}
 
 		@media (max-width: $md3) {
 			width: 100%;
 			& + & {
-				margin-top: 3%;
+				margin-top: 2%;
 			}
 		}
 	}

@@ -127,6 +127,24 @@ allLink = $('.menu__item');
 			if ($('html').attr('lang') === 'en') {
 
 				$('html').attr('lang', 'ru');
+				$('.menu__link').each(function(index, val) {
+					if (index === 0) {
+						$(val).html('Главная');
+						$(val).parent().css({'margin-right': '5px'});
+					} else if (index === 1) {
+						$(val).html('Обо мне');
+						$(val).parent().css({'margin-right': '5px'});
+					} else if (index === 2) {
+						$(val).html('Услуги');
+						$(val).parent().css({'margin-right': '5px'});
+					} else if (index === 3) {
+						$(val).html('Портфолио');
+						$(val).parent().css({'margin-right': '5px'});
+					} else if (index === 4) {
+						$(val).html('Контакты');
+					}
+				});
+				$('.lang-switch__current').html('Русский');
 				$('.intro__title').html('Привет, Я Арсений Панов');
 				$('.intro__subtitle').html('Я пишу HTML и CSS код, чтобы создавать удобные и эффективные сайты.');
 				let about = $('#about');
@@ -135,7 +153,7 @@ allLink = $('.menu__item');
 					if (index === 0) {
 						$(val).html('Целеустремленный, ответственный и исполнительный. За плечами высшее техническое образование по специальности программист. Имея аналитический склад ума и логическое мышление - в процессе верстки продумываю каждую деталь и подготавливаю удобный и чистый код для программистов.');
 					} else if (index === 1) {
-						$(val).html('<b>Род занятий:</b> <br>— Верстка кроссбраузерная, валидная, адаптивная и отзывчивая (responsive/резиновая)<b>;</b> <br>— СSS3/JS анимация сайтов<b>;</b> <br>— Верстаю из любых исходников (PSD, Sketch, Figma, Zeplin, Avocode, Adobe XD).');
+						$(val).html('<b>Преимущества:</b><br>— Приступаю к работе сразу<b>;</b><br>— Всегда довожу работу до конца и не срываю сроки<b>;</b><br>— Постоянно на связи<b>;</b><br>— Не беру предоплату;');
 					} else if (index === 2) {
 						$(val).html('<b>Технологии:</b> — HTML (HTML5), CSS (CSS3), JavaScript, Jquery, SASS/SCSS, Flexbox, Gulp, БЭМ');
 					}
@@ -162,6 +180,35 @@ allLink = $('.menu__item');
 				});
 				services.find('.section-footer__title').html('Хотите узнать больше или просто обсудить что-то?');
 				services.find('.section-footer__btn').html('Связаться');
+				let work = $('#work');
+				work.find('.section__title').html('Мои работы');
+				$('.work__subtitle').each(function(index, val) {
+					if (index === 0) {
+						$(val).html('Минималистичный сайт портфолио');
+					} else if (index === 1) {
+						$(val).html('Сайт для стильного женского интернет магазина');
+					} else if (index === 2) {
+						$(val).html('Портфолио для frontend разработчика');
+					} else if (index === 3) {
+						$(val).html('Сайт для новостного агенства в светлых тонах');
+					}
+				});
+				let contact = $('#contact');
+				contact.find('.section__title').html('Связаться со мной');
+				$('.form__input').each(function(index, val) {
+					if (index === 0) {
+						$(val).attr('placeholder','Ваше Имя *');
+					} else if (index === 1) {
+						$(val).attr('placeholder','Ваша Фамилия *');
+					} else if (index === 2) {
+						$(val).attr('placeholder','Ваш Email *');
+					} else if (index === 3) {
+						$(val).attr('placeholder','Ваш телефон');
+					} else if (index === 4) {
+						$(val).attr('placeholder','Комментарий или ссылка на макеты/задание');
+					}
+				});
+				$('.form__submit').attr('value', 'Отправить сообщение');
 			} else {
 				return;
 			}
@@ -170,6 +217,24 @@ allLink = $('.menu__item');
 			if ($('html').attr('lang') === 'ru') {
 
 				$('html').attr('lang', 'en');
+				$('.menu__link').each(function(index, val) {
+					if (index === 0) {
+						$(val).html('Intro');
+						$(val).parent().css({'margin-right': '10px'});
+					} else if (index === 1) {
+						$(val).html('About');
+						$(val).parent().css({'margin-right': '10px'});
+					} else if (index === 2) {
+						$(val).html('Services');
+						$(val).parent().css({'margin-right': '10px'});
+					} else if (index === 3) {
+						$(val).html('My work');
+						$(val).parent().css({'margin-right': '10px'});
+					} else if (index === 4) {
+						$(val).html('Contact');
+					}
+				});
+				$('.lang-switch__current').html('English');
 				$('.intro__title').html('Hello, I\'m Arsenii Panov');
 				$('.intro__subtitle').html('I write HTML and CSS to create user-friendly and efficient websites.');
 				$('#about').find('.section__title').html('About me');
@@ -179,7 +244,7 @@ allLink = $('.menu__item');
 					if (index === 0) {
 						$(val).html('Purposeful, responsible and executive. I have a higher technical education in the specialty of a programmer. Having an analytical mindset and logical thinking - in the process of layout I think over every detail and prepare convenient and clean code for programmers.');
 					} else if (index === 1) {
-						$(val).html('<b>Occupation:</b><br>— Cross-browser, valid, adaptive and responsive HTML code<b>;</b><br>— CSS3/JS site animation<b>;</b><br>— Layout from any source (PSD, Sketch, Figma, Zeplin, Avocode, Adobe XD).');
+						$(val).html('<b>Advantages:</b><br>— I get to work right away<b>;</b><br>— I always bring the work to the end and don\'t break the deadlines<b>;</b><br>— Constantly in touch<b>;</b><br>— I don\'t take prepayment<b>;</b>');
 					} else if (index === 2) {
 						$(val).html('<b>Technologies:</b> — HTML(HTML5), CSS(CSS3), JavaScript, Jquery, SASS/SCSS, Flexbox, Gulp, BEM');
 					}
@@ -206,6 +271,35 @@ allLink = $('.menu__item');
 				});
 				services.find('.section-footer__title').html('Would you like to know more or just discuss something?');
 				services.find('.section-footer__btn').html('Contact me');
+				let work = $('#work');
+				work.find('.section__title').html('My work');
+				$('.work__subtitle').each(function(index, val) {
+					if (index === 0) {
+						$(val).html('Clean and minimal Portfolio site');
+					} else if (index === 1) {
+						$(val).html('Website for a stylish women\'s online store');
+					} else if (index === 2) {
+						$(val).html('Portfolio site for frontend developer');
+					} else if (index === 3) {
+						$(val).html('Website for a news agency in light colors');
+					}
+				});
+				let contact = $('#contact');
+				contact.find('.section__title').html('Contact me');
+				$('.form__input').each(function(index, val) {
+					if (index === 0) {
+						$(val).attr('placeholder','Your firstname *');
+					} else if (index === 1) {
+						$(val).attr('placeholder','Your lastname *');
+					} else if (index === 2) {
+						$(val).attr('placeholder','Yout email *');
+					} else if (index === 3) {
+						$(val).attr('placeholder','Your phone');
+					} else if (index === 4) {
+						$(val).attr('placeholder','Comment or link to layouts/task');
+					}
+				});
+				$('.form__submit').attr('value', 'Send message');
 			} else {
 				return;
 			}
