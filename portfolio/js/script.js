@@ -80,7 +80,7 @@ var contactLink = $('[data-scroll="#contact"]').parent('li'),
 		}
 	};
 // Активный код================================================================================================================================================================
-	// Lang Switch
+	// // Lang Switch
 	function changeToRu () {
 		$('html').attr('lang', 'ru');
 		let margin = 5;
@@ -300,26 +300,7 @@ var contactLink = $('[data-scroll="#contact"]').parent('li'),
 			scrollTop: blockOffset},
 			700, "linear");
 	});;
-	function browserLocale () {
-	  var lang
-
-	  if (navigator.languages && navigator.languages.length) {
-	    // latest versions of Chrome and Firefox set this correctly
-	    lang = navigator.languages[0]
-	  } else if (navigator.userLanguage) {
-	    // IE only
-	    lang = navigator.userLanguage
-	  } else {
-	    // latest versions of Chrome, Firefox, and Safari set this correctly
-	    lang = navigator.language
-	  }
-
-	  return lang
-	}
-	// Change Lang
-	if (browserLocale().indexOf('ru') !== -1) {
-    	changeToRu();
-	};
+	// @include('langidentifier.js');
 
 	// Burger menu
 	$('.header__burger').click(function() {

@@ -633,15 +633,17 @@ body {
 }
 
 .about__text {
-  width: 48%;
-  text-align: left;
   opacity: 0;
   -webkit-animation-delay: .25s;
           animation-delay: .25s;
 }
 
-.about__text p {
-  margin-bottom: 16px;
+.about__text ul {
+  padding-left: 20px;
+}
+
+.about__text ul li {
+  list-style-type: disc;
 }
 
 .about__skills {
@@ -649,6 +651,20 @@ body {
   opacity: 0;
   -webkit-animation-delay: .500s;
           animation-delay: .500s;
+}
+
+.text-about {
+  width: 48%;
+  text-align: left;
+}
+
+.text-about__item {
+  margin-bottom: 16px;
+}
+
+.text-about__item:nth-child(2),
+.text-about__item:last-child {
+  margin-bottom: 0;
 }
 
 .skills__item {
@@ -721,18 +737,12 @@ body {
           animation-delay: .6s;
 }
 
-.services__icon {
-  font-size: 3.5rem;
-  line-height: 1;
-  margin-bottom: 10px;
-  text-shadow: 5px 5px 0 #3aa18c;
-}
-
 .services__title {
   font-family: "Roboto Slab", serif;
   font-size: 1.75rem;
   line-height: 1.2;
   margin-bottom: 1rem;
+  text-align: left;
 }
 
 .services__text {
