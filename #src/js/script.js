@@ -16,15 +16,7 @@ $(function() {
 // Активный код================================================================================================================================================================
 	@@include('langswitch.js');
 	@@include('smoothscroll.js');
-
-
-	// change Lang if Ru
-	let userLang = window.navigator ? (window.navigator.language ||
-                  window.navigator.systemLanguage ||
-                  window.navigator.userLanguage) : "ru";
-	if(userLang === 'ru') {
-		changeToRu();
-	} 
+	@@include('langidentifier.js');
 
 	// Burger menu
 	$('.header__burger').click(function() {
