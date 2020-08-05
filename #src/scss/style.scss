@@ -508,7 +508,7 @@ body {
 .services {
 	display: flex;
 	justify-content: space-between;
-	@media (max-width: $md2) {
+	@media (max-width: $md1) {
 		flex-wrap: wrap;
 		// align-items: center;
 		justify-content: center;
@@ -517,7 +517,11 @@ body {
 	&__item {
 		width: 32%;
 		opacity: 0;
-
+		display: flex;
+		flex-direction: column;
+		// justify-content: space-between;
+		// flex-grow: 0;
+		// align-items: stretch;
 		&_first {
 			animation-delay: .2s;
 		}
@@ -530,9 +534,14 @@ body {
 			animation-delay: .6s;
 		}
 
+		@media (max-width: $md1) {
+			width: 60%;
+			& + & {
+				margin-top: 1.5rem;
+			}
+		}
 		@media (max-width: $md2) {
 			width: 85%;
-			margin-bottom: 1rem;
 		}
 
 		@media (max-width: $md3) {
@@ -540,24 +549,33 @@ body {
 		}
 	}
 	// .services__icon
-	// &__icon {
-	// 	font-size: (45/16) + rem;
-	// 	line-height: 1;
-	// 	margin-bottom: 10px;
-	// 	text-shadow: 5px 5px 0 #3aa18c;
-	// }
+	&__icon {
+		font-size: (46/16) + rem;
+		line-height: 1;
+		margin-bottom: 10px;
+		text-shadow: 5px 5px 0 #3aa18c;
+	}
 	// .services__title
 	&__title {
 		font-family: $sec-font;
 		font-size: 1.75rem;
 		line-height: 1.2;
 		margin-bottom: 1rem;
-		text-align: left;
+		// flex-grow: 1;
+		// height: 30%;
+		// text-align: left;
 	}
 	// .services__text
 	&__text {
 		font-size: 0.9rem;
-		text-align: left;
+		// text-align: left;
+		// padding-bottom: 5%;
+		// margin-bottom: 100%;
+		// height: 50%;
+		// flex-grow: 1;
+		// vertical-align: bottom;
+		// align-self: flex-end;
+		// margin-top: auto;
 	}
 }
 // Section-footer
@@ -621,6 +639,7 @@ body {
 	// .work__item
 	&__item {
 		width: 32%;
+		box-shadow: 0 0 14px 1px rgba(0,0,0,0.2);
 		&:hover {
 			.work__text {
 				opacity: 1;
@@ -634,6 +653,10 @@ body {
 
 		&:nth-last-child(-n+3) {
 			margin-top: 1%;
+		}
+
+		&:nth-last-child(-n+2) {
+			display: none;
 		}
 
 		@media (max-width: $md1) {
@@ -654,7 +677,7 @@ body {
 	// .work__link
 	&__link {
 		overflow: hidden;
-		display: inline-block;
+		display: block;
 		position: relative;
 		color: #fff;
 	}

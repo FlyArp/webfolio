@@ -27,12 +27,14 @@
 		$('.intro__subtitle').html('Я пишу HTML и CSS код, чтобы создавать удобные и эффективные сайты.');
 		let about = $('#about');
 		about.find('.section__title').html('Обо мне');
-		$(about.find('.about__text p')).each(function(index, val) {
+		$(about.find('.text-about__item')).each(function(index, val) {
 			if (index === 0) {
 				$(val).html('Целеустремленный, ответственный и исполнительный. За плечами высшее техническое образование по специальности программист. Имея аналитический склад ума и логическое мышление - в процессе верстки продумываю каждую деталь и подготавливаю удобный и чистый код для программистов.');
 			} else if (index === 1) {
-				$(val).html('<b>Преимущества:</b><br>— Приступаю к работе сразу<b>;</b><br>— Всегда довожу работу до конца и не срываю сроки<b>;</b><br>— Постоянно на связи<b>;</b><br>— Не беру предоплату;');
+				$(val).html('<b>Преимущества:</b>');
 			} else if (index === 2) {
+				$(val).html('<li>Приступаю к работе сразу</li> <li>Всегда довожу работу до конца и не срываю сроки</li> <li>Постоянно на связи</li> <li>Не беру предоплату</li>')
+			} else if (index === 3) {
 				$(val).html('<b>Технологии:</b> — HTML (HTML5), CSS (CSS3), JavaScript, Jquery, SASS/SCSS, Flexbox, Gulp, БЭМ');
 			}
 		});
@@ -117,12 +119,14 @@
 		$('#about').find('.section__title').html('About me');
 		let about = $('#about');
 		about.find('.section__title').html('About me');
-		$(about.find('.about__text p')).each(function(index, val) {
+		$(about.find('.text-about__item')).each(function(index, val) {
 			if (index === 0) {
 				$(val).html('Purposeful, responsible and executive. I have a higher technical education in the specialty of a programmer. Having an analytical mindset and logical thinking - in the process of layout I think over every detail and prepare convenient and clean code for programmers.');
 			} else if (index === 1) {
-				$(val).html('<b>Advantages:</b><br>— I get to work right away<b>;</b><br>— I always bring the work to the end and don\'t break the deadlines<b>;</b><br>— Constantly in touch<b>;</b><br>— I don\'t take prepayment<b>;</b>');
+				$(val).html('<b>Advantages:</b>');
 			} else if (index === 2) {
+				$(val).html('<li>Get to work right away</li> <li>Always bring the work to the end and don\'t break the deadlines</li> <li>Constantly in touch</li> <li>Don\'t take prepayment</li>')
+			} else if (index === 3) {
 				$(val).html('<b>Technologies:</b> — HTML(HTML5), CSS(CSS3), JavaScript, Jquery, SASS/SCSS, Flexbox, Gulp, BEM');
 			}
 		});
@@ -134,7 +138,7 @@
 			} else if (index === 1) {
 				$(val).html('CSS3/JS animation');
 			} else if (index === 2) {
-				$(val).html('Correction of the existing code');
+				$(val).html('Correction code');
 			}
 		});
 		$('.services__text').each(function(index, val) {
