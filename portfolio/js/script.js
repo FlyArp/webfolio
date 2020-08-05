@@ -117,7 +117,7 @@ var contactLink = $('[data-scroll="#contact"]').parent('li'),
 			} else if (index === 2) {
 				$(val).html('<li>Приступаю к работе сразу</li> <li>Всегда довожу работу до конца и не срываю сроки</li> <li>Постоянно на связи</li> <li>Не беру предоплату</li>')
 			} else if (index === 3) {
-				$(val).html('<b>Технологии:</b> — HTML (HTML5), CSS (CSS3), JavaScript, Jquery, SASS/SCSS, Flexbox, Gulp, БЭМ');
+				$(val).html('<b>Технологии:</b> HTML (HTML5), CSS (CSS3), JavaScript, Jquery, SASS/SCSS, Flexbox, Gulp, БЭМ');
 			}
 		});
 		let services = $('#services');
@@ -209,7 +209,7 @@ var contactLink = $('[data-scroll="#contact"]').parent('li'),
 			} else if (index === 2) {
 				$(val).html('<li>Get to work right away</li> <li>Always bring the work to the end and don\'t break the deadlines</li> <li>Constantly in touch</li> <li>Don\'t take prepayment</li>')
 			} else if (index === 3) {
-				$(val).html('<b>Technologies:</b> — HTML(HTML5), CSS(CSS3), JavaScript, Jquery, SASS/SCSS, Flexbox, Gulp, BEM');
+				$(val).html('<b>Technologies:</b> HTML(HTML5), CSS(CSS3), JavaScript, Jquery, SASS/SCSS, Flexbox, Gulp, BEM');
 			}
 		});
 		let services = $('#services');
