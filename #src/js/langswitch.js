@@ -64,12 +64,16 @@
 		work.find('.section__title').html('Мои работы');
 		$('.work__subtitle').each(function(index, val) {
 			if (index === 0) {
-				$(val).html('Минималистичный сайт портфолио');
+				$(val).html('Верстка для многостраничного сайта "Медилаб"');
 			} else if (index === 1) {
-				$(val).html('Сайт для стильного женского интернет магазина');
+				$(val).html('Минималистичный сайт портфолио');
 			} else if (index === 2) {
-				$(val).html('Портфолио для frontend разработчика');
+				$(val).html('Верстка для главной страницы сайта "Монтажспецстрой"');
 			} else if (index === 3) {
+				$(val).html('Сайт для стильного женского интернет магазина');
+			} else if (index === 4) {
+				$(val).html('Портфолио для frontend разработчика');
+			} else if (index === 5) {
 				$(val).html('Сайт для новостного агенства в светлых тонах');
 			}
 		});
@@ -156,12 +160,16 @@
 		work.find('.section__title').html('My work');
 		$('.work__subtitle').each(function(index, val) {
 			if (index === 0) {
-				$(val).html('Clean and minimal Portfolio site');
+				$(val).html('HTML,CSS and JS code for multi-page site "Medilab"');
 			} else if (index === 1) {
-				$(val).html('Website for a stylish women\'s online store');
+				$(val).html('Clean and minimal Portfolio site');
 			} else if (index === 2) {
-				$(val).html('Portfolio site for frontend developer');
+				$(val).html('HTML,CSS and JS code for the main page of the site "Монтажспецстрой"');
 			} else if (index === 3) {
+				$(val).html('Website for a stylish women\'s online store');
+			} else if (index === 4) {
+				$(val).html('Portfolio site for frontend developer');
+			} else if (index === 5) {
 				$(val).html('Website for a news agency in light colors');
 			}
 		});
