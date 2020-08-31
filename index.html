@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap">
+	<link rel="stylesheet" href="css/style.min.css">
+	<title>Webfolio</title>
+</head>
+<body>
+	<header class="header">
+		<div class="container">
+			<div class="header__box">
+				<a href="" class="header__logo">Webfolio</a>
+				
+				<div class ="header__burger burger">
+					<span></span>
+				</div>
+				<nav class="header__menu menu">
+					<div class="menu__wrapper">
+						<ul class="menu__list">
+							<li class="menu__item active"><a href="" class="menu__link" data-scroll="#intro">Intro</a></li>
+							<li class="menu__item"><a href="" class="menu__link" data-scroll="#about">About</a></li>
+							<li class="menu__item"><a href="" class="menu__link" data-scroll="#services">Services</a></li>
+							<li class="menu__item"><a href="" class="menu__link" data-scroll="#work">My work</a></li>
+							<li class="menu__item"><a href="" class="menu__link" data-scroll="#contact">Contact</a></li>
+						</ul>
+						<div class="lang-switch">
+							<div class="lang-switch__current">English</div>
+							<div class="lang-switch__choice">
+								<span class="lang-switch__item" lang="en" data-lang="en">English</span>
+								<span class="lang-switch__item" lang="ru" data-lang="ru">Русский</span>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<main class="page">
+		<section class="intro" id="intro">
+			<div class="container intro__container">
+				<div class="intro__logo-container">
+					<img class="intro__logo fade-top" src="img/intro/logo.svg" alt="Logo">
+				</div>
+				<div class="intro__content">
+					<h1 class="intro__title fade-top">Hello, I'm Arsenii Panov</h1>
+					<h2 class="intro__subtitle fade-top">I write HTML and CSS to create user-friendly and efficient websites.</h2>
+				</div>
+			</div>
+		</section>
+
+		<section class="section" id="about">
+			<div class="container">
+				<h2 class="section__title" data-aos="fade-top">About Me</h2>
+				<div class="about">
+					<div class="about__text text-about" data-aos="fade-bottom">
+						<p class="text-about__item">Purposeful, responsible and executive. I have a higher technical education in the specialty of a programmer. Having an analytical mindset and logical thinking - in the process of layout I think over every detail and prepare convenient and clean code for programmers.</p>
+						<p class="text-about__item">
+							<b>Advantages:</b>
+						</p>
+						<ul class="text-about__item">
+							<li>Get to work right away</li>
+							<li>Always bring the work to the end and don't break the deadlines</li>
+							<li>Constantly in touch</li>
+							<li>Don't take prepayment</li>
+						</ul>
+						<p class="text-about__item"><b>Technologies: </b>  HTML(HTML5), CSS(CSS3), JavaScript, Jquery, SASS/SCSS, Flexbox, Gulp, BEM</p>
+					</div>
+					<div class="about__skills skills" data-aos="fade-bottom">
+						<div class="skills__item">
+							<h3 class="skills__title">Html coding</h3>
+							<div class="skills__bar">
+								<div class="skills__html"></div>
+							</div>
+						</div>
+						<div class="skills__item">
+							<h3 class="skills__title">css/sass</h3>
+							<div class="skills__bar">
+								<div class="skills__css"></div>
+							</div>
+						</div>
+						<div class="skills__item">
+							<h3 class="skills__title">Jquery</h3>
+							<div class="skills__bar">
+								<div class="skills__jquery"></div>
+							</div>
+						</div>
+						<div class="skills__item">
+							<h3 class="skills__title">Javascript</h3>
+							<div class="skills__bar">
+								<div class="skills__javascript"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section section_green" id="services">
+			<div class="container">
+				<h2 class="section__title" data-aos="fade-top">Services</h2>
+				<div class="services">
+					<div class="services__item services__item_first" data-aos="fade-bottom">
+						<div class="services__icon">
+							<i class="icon-html5"></i>
+						</div>
+						<h3 class="services__title">HTML coding</h3>
+						<p class="services__text">I will make a website of any complexity. For all devices and browsers. The code will be clean, valid, adaptive and responsive</p>
+					</div>
+					<div class="services__item services__item_second" data-aos="fade-bottom">
+						<div class="services__icon">
+							<i class="icon-javascript"></i>
+						</div>
+						<h3 class="services__title">CSS3/JS animation</h3>
+						<p class="services__text">Pop-up and drop-down windows, smooth scrolling and smooth appearance. This and much more I can do with JavaScript and CSS3</p>
+					</div>
+					<div class="services__item services__item_third" data-aos="fade-bottom">
+						<div class="services__icon">
+							<i class="icon-file-code-o"></i>
+						</div>
+						<h3 class="services__title">Correction code</h3>
+						<p class="services__text">I will be able to fix and modify the existing html code and add new or missing components to it.</p>
+					</div>
+				</div>
+				<hr class="section__line" data-aos="fade-bottom">
+				<div class="section-footer" data-aos="fade-bottom">
+					<p class="section-footer__title">Would you like to know more or just discuss something?</p>
+					<a href="#" class="section-footer__btn btn" data-scroll="#contact">Contact me</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="section" id="work">
+			<div class="container">
+				<h2 class="section__title" data-aos="fade-bottom">My Work</h2>
+				<div class="work" data-aos="fade-bottom">
+					<div class="work__row">
+						<div class="work__item">
+							<a href="https://flyarp.github.io/medilab/" class="work__link">
+								<img src="img/work/5.jpg" alt="work preview" class="work__img">
+								<div class="work__text">
+									<p class="work__title">Медилаб</p>
+									<p class="work__subtitle">HTML,CSS and JS code for multi-page site "Medilab"</p>
+								</div>
+							</a>
+						</div>
+						<div class="work__item">
+							<a href="https://flyarp.github.io/Snow/" class="work__link" target="_blank">
+								<img src="img/work/1.jpg" alt="work preview" class="work__img">
+								<div class="work__text">
+									<p class="work__title">"Snow"</p>
+									<p class="work__subtitle">Clean and minimal Portfolio site</p>
+								</div>
+							</a>
+						</div>
+						<div class="work__item">
+							<a href="https://flyarp.github.io/montaj" class="work__link">
+								<img src="img/work/6.jpg" alt="work preview" class="work__img">
+								<div class="work__text">
+									<p class="work__title">Монтаж спец строй</p>
+									<p class="work__subtitle">HTML,CSS and JS code for the main page of the site "Монтажспецстрой"</p>
+								</div>
+							</a>
+						</div>
+						<div class="work__item">
+							<a href="https://flyarp.github.io/silcon-ecom/" class="work__link" target="_blank">
+								<img src="img/work/2.jpg" alt="work preview" class="work__img">
+								<div class="work__text">
+									<p class="work__title">"Silon"</p>
+									<p class="work__subtitle">Website for a stylish women's online store</p>
+								</div>
+							</a>
+						</div>
+						<div class="work__item">
+							<a href="https://flyarp.github.io/portfolio-1/" class="work__link" target="_blank">
+								<img src="img/work/3.jpg" alt="work preview" class="work__img">
+								<div class="work__text">
+									<p class="work__title">Portfolio</p>
+									<p class="work__subtitle">Portfolio site for frontend developer</p>
+								</div>
+							</a>
+						</div>					
+						<div class="work__item">
+							<a href="https://flyarp.github.io/news-agency/" class="work__link" target="_blank">
+								<img src="img/work/4.jpg" alt="work preview" class="work__img">
+								<div class="work__text">
+									<p class="work__title">"News Agency"</p>
+									<p class="work__subtitle">Website for a news agency in light colors</p>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="section" id="contact">
+			<div class="contact" data-aos="bounce">
+				<div class="container" >
+					<h2 class="section__title section__title_visible">CONTACT ME</h2>
+					<form class="contact__form form" name="input" method="post" action="https://formspree.io/arsenii_panov@bk.ru">
+						<div class="form__container">
+							<input type="text" class="form__input form__text" placeholder="Your firstname *" required name="FirstName">
+							<input type="text" class="form__input form__text" placeholder="Your lastname *" required name="LastName">
+						</div>
+						<div class="form__container">
+							<input type="email" class="form__input form__text" placeholder="Your email *" required name="_replyto">
+							<input type="tel" class="form__input form__text" placeholder="Your phone" name="phone">
+						</div>
+						<div class="form__container">
+							<textarea name="message" class="form__input form__area" placeholder="Comment or link to layouts/task"></textarea>
+						</div>
+						<input type="submit" class="form__submit btn" value="Send message">
+					</form>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer">
+	<div class="container footer__container">
+		<div class="footer-contact footer__item">
+			<div class="footer-contact__item">
+				<i class="icon-whatsapp"></i>
+				<div>+7 (952) 214-14-64</div>
+			</div>
+			<div class="footer-contact__item">
+				<i class="icon-envelope-o"></i>
+				<div>arsenii_panov@bk.ru</div>
+			</div>
+		</div>
+		<p class="footer__item">© Arsenii Panov, 2019 – 2020</p>
+	</div>
+</footer>
+
+	
+	<script src="js/libs.min.js"></script>
+<script src="js/script.min.js"></script>
+
+</body>
+</html>
